@@ -3,10 +3,12 @@ const linkToCover = require('../components/link-to-cover/link-to-cover');
 
 const compileAndGetLink = async data => {
   const path = await compileCover(data);
+  console.log("Compilado");
   return linkToCover(path);
 };
 
 const generateCover = async (req, res) => {
+  console.log("Empiezo");
   try {
     const data = req.body;
     const link = await compileAndGetLink(data);
