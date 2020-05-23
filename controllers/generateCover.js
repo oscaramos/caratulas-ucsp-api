@@ -10,7 +10,7 @@ const generateCover = async (req, res) => {
   try {
     const data = req.body;
     const link = await compileAndGetLink(data);
-    res.send(link);
+    res.send({link});
   } catch (e) {
     console.log(e);
     res.status(400).send('Error on server');
