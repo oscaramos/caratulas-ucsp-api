@@ -10,6 +10,7 @@ app.use(express.static('public'));
 
 app.post('/', (req, res) => generateCover(req, res));
 
-app.listen(4000, function () {
-  console.log('Listening on port 4000!');
+const port = process.env.PORT || 4000;
+app.listen(port, function () {
+  console.log(`Listening on port ${port}!`);
 });
