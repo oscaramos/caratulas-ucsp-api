@@ -8,6 +8,8 @@ const options = {
 }
 
 const compileLatex = (inTexPath, outPdfPath) => {
+  console.log(inTexPath);
+  console.log(outPdfPath);
   const input = fs.createReadStream(inTexPath)
   const output = fs.createWriteStream(outPdfPath)
 
