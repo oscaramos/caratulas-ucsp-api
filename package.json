@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index",
+    "start": "pm2 start index.js",
+    "dev": "nodemon index",
     "test": "jest"
   },
   "keywords": [],
@@ -15,6 +16,7 @@
     "express": "^4.17.1",
     "morgan-body": "^2.4.8",
     "node-latex": "^2.6.3",
+    "pm2": "^4.4.0",
     "template-file": "^3.1.0",
     "tmp": "^0.2.1",
     "tmp-promise": "^3.0.2",
