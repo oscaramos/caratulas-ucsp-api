@@ -7,11 +7,17 @@ const { atPublic } = require('../rootUtils.utils')
 const getOutputPdfName = () => uniqueFilename(atPublic())+'.pdf';
 
 const compileCover = async data => {
+  console.log("Empiezo compilacion");
   data = fillData(data);
+  console.log("Llene datos");
   const tmp = await createTmpFromTemplate(data);
+  console.log("Cree tmp");
   const pdfPath = getOutputPdfName(data);
+  console.log("Cree output");
   await compileLatex(tmp.path, pdfPath);
+  console.log("Finalmente compilo");
   tmp.cleanup();
+  console.log("Limpio cache");
   return pdfPath;
 }
 
