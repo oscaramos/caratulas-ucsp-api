@@ -15,7 +15,7 @@ const compileCover = async data => {
   const pdfPath = getOutputPdfName(data);
   console.log("Cree output");
   await compileLatex(tmp.path, pdfPath);
-  console.log("Finalmente compiloo");
+  console.log("Finalmente compilo");
   tmp.cleanup();
   console.log("Limpio cache");
   return pdfPath;
