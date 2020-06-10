@@ -1,13 +1,8 @@
-const uniqueFilename = require('unique-filename');
-const compileLatex = require('../compile-latex/compile-latex');
-const fillData = require('../fill-data/fill-data');
 const createTmpFromTemplate = require('../create-tmp-from-template/create-tmp-from-template');
-
-const { atPublic } = require('../rootUtils.utils')
-const getOutputPdfName = () => uniqueFilename(atPublic())+'.pdf';
+const compileLatex = require('../compile-latex/compile-latex');
+const getOutputPdfName = require('../get-output-pdf-name/get-output-pdf-name');
 
 const compileCover = async data => {
-  data = fillData(data);
   const tmp = await createTmpFromTemplate(data);
   const pdfPath = getOutputPdfName(data);
   await compileLatex(tmp.path, pdfPath);

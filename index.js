@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const morganBody = require('morgan-body');
-const { generateCover } = require('./controllers/generateCover');
+const generateCover = require('./controllers/generateCover');
 
 const app = express();
 

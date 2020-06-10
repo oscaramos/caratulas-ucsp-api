@@ -1,15 +1,12 @@
+const fillData = require('../components/fill-data/fill-data');
 const compileCover = require('../components/compile-cover/compile-cover');
 const linkToCover = require('../components/link-to-cover/link-to-cover');
 
-const compileAndGetLink = async data => {
-  const path = await compileCover(data);
-  return linkToCover(path);
-};
-
 const generateCover = async (req, res) => {
   try {
-    const data = req.body;
-    const link = await compileAndGetLink(data);
+    const data = fillData(req.body);
+    const path = await compileCover(data);
+    const link = linkToCover(path);
     res.send({ link });
   } catch (e) {
     console.log(e);
@@ -17,4 +14,4 @@ const generateCover = async (req, res) => {
   }
 };
 
-module.exports = { generateCover };
+module.exports = generateCover;

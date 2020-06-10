@@ -1,10 +1,10 @@
 const fromTemplate = require('./from-template')
 const { atUtils } = require('../rootUtils.utils')
-const dataExample = require('../dataExample');
+const dataTest = require('../../TestData');
 
 it('One student', () => {
   let templatePath = atUtils('caratula.tex');
-  const data = dataExample.maleStudent;
+  const data = dataTest.maleStudent;
   return fromTemplate(templatePath, data).then(renderedString => {
     console.log(renderedString);
   });
@@ -12,7 +12,7 @@ it('One student', () => {
 
 it('Multiple students', () => {
   let templatePath = atUtils('caratula.tex');
-  const data = dataExample.multipleStudents;
+  const data = dataTest.multipleStudents;
   return fromTemplate(templatePath, data).then(renderedString => {
     console.log(renderedString);
   });

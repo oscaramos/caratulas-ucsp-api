@@ -25,7 +25,10 @@ const multipleStudents =
     career: 'ALL',
     course: 'The final boss',
     work: 'More than you can ever imagine',
-    names: ['Oscar Daniel Ramos Ramirez', 'Noelia Milagros Ramos Ramirez'],
+    names: ['Oscar Daniel Ramos Ramirez',
+        'Oscar Daniel Ramos Ramirez',
+        'Oscar Daniel Ramos Ramirez',
+        'Oscar Daniel Ramos Ramirez'],
     semester: 'Semester infinite',
     year: '9999'
   }

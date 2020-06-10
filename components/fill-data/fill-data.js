@@ -1,9 +1,4 @@
-const mergeNames = names =>
-  names.reduce((prev, curr) => {
-    if (prev === '')
-      return curr;
-    return String.raw`${prev} \\ ${curr}`;
-  }, "");
+const mergeNames = names => names.join(String.raw` \\ `)
 
 const fillData = (data) => {
     if(data.names.length > 1)

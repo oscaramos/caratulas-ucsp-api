@@ -1,26 +1,26 @@
 const fillData = require('./fill-data');
-const dataExample = require('../dataExample');
+const dataTest = require('../../TestData');
 
 it('When its male then fill male footer', () => {
-  const data = dataExample.maleStudent;
+  const data = dataTest.maleStudent;
   const newdata = fillData(data);
   expect(newdata.footer).toEqual('El alumno declara haber realizado el presente trabajo de acuerdo a las normas de la Universidad Católica San Pablo');
 });
 
 it('When its female then fill female footer', () => {
-  const data = dataExample.femaleStudent;
+  const data = dataTest.femaleStudent;
   const newdata = fillData(data);
   expect(newdata.footer).toEqual('La alumna declara haber realizado el presente trabajo de acuerdo a las normas de la Universidad Católica San Pablo');
 });
 
 it('When its multiple person then fill multiple footer', () => {
-  const data = dataExample.multipleStudents;
+  const data = dataTest.multipleStudents;
   const newdata = fillData(data);
   expect(newdata.footer).toEqual('Los alumnos declaran haber realizado el presente trabajo de acuerdo a las normas de la Universidad Católica San Pablo');
 });
 
 it('When multiple person then fill separated names', () => {
-  const data = dataExample.multipleStudents;
+  const data = dataTest.multipleStudents;
   const newdata = fillData(data);
-  expect(newdata.names).toEqual(String.raw`${data.names[0]} \\ ${data.names[1]}`);
+  expect(newdata.names).toEqual(data.names.join(String.raw` \\ `));
 });
