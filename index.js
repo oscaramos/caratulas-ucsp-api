@@ -12,7 +12,6 @@ app.use(express.static('public'));
 morganBody(app);
 
 app.post('/', (req, res) => generateCover(req, res));
-app.post('/test', (req, res) => res.send("Todo bem here"));
 
 const port = process.env.PORT || 4000;
 app.listen(port, () => {
