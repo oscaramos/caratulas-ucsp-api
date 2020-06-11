@@ -1,36 +1,34 @@
 const maleStudent =
   {
     career: 'Computer Science',
-    course: 'Microprocessors',
-    work: 'Real final job',
+    course: 'Curso final de carrera',
+    work: 'Trabajo final de carrera',
     gender: 'M',
-    names: ['Oscar Daniel Ramos Ramirez'],
-    semester: 'VIII Semester',
-    year: '1999',
+    names: ['Nombre1 Nombre2 Apellido1 Apellido2'],
+    semester: 'Semestre X',
+    year: '2020-1',
   }
 
 const femaleStudent =
   {
-    career: 'Enterprises',
-    course: 'Micro',
-    work: 'Getting money from passages',
+    career: 'Computer Science',
+    course: 'Curso final de carrera',
+    work: 'Trabajo final de carrera',
     gender: 'F',
-    names: ['Noelia Milagros Ramos Ramirez'],
-    semester: 'X Semester',
-    year: '1999'
+    names: ['Nombre1 Nombre2 Apellido1 Apellido2'],
+    semester: 'Semestre X',
+    year: '2020-1',
   }
 
-const multipleStudents =
+const multipleStudents = (numStudents) => (
   {
-    career: 'ALL',
-    course: 'The final boss',
-    work: 'More than you can ever imagine',
-    names: ['Oscar Daniel Ramos Ramirez',
-        'Oscar Daniel Ramos Ramirez',
-        'Oscar Daniel Ramos Ramirez',
-        'Oscar Daniel Ramos Ramirez'],
-    semester: 'Semester infinite',
-    year: '9999'
+    career: 'Computer Science',
+    course: 'Curso final de carrera',
+    work: 'Trabajo final de carrera',
+    names:  [...[...Array(numStudents).keys()].map(_ => 'Nombre1 Nombre2 Apellido1 Apellido2')],
+    semester: 'Semestre X',
+    year: '9999-9'
   }
+)
 
 module.exports = {maleStudent, femaleStudent, multipleStudents};

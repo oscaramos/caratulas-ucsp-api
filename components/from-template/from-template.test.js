@@ -12,7 +12,7 @@ it('One student', () => {
 
 it('Multiple students', () => {
   let templatePath = atUtils('caratula.tex');
-  const data = dataTest.multipleStudents;
+  const data = dataTest.multipleStudents(2);
   return fromTemplate(templatePath, data).then(renderedString => {
     console.log(renderedString);
   });

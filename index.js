@@ -12,6 +12,9 @@ app.use(express.static('public'));
 morganBody(app);
 
 app.post('/', (req, res) => generateCover(req, res));
+app.post('/answer', (req, res) => {
+  console.log("respuesta!: " + req.body.answer)
+});
 
 const port = process.env.PORT || 4000;
 app.listen(port, () => {

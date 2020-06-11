@@ -14,13 +14,13 @@ it('When its female then fill female footer', () => {
 });
 
 it('When its multiple person then fill multiple footer', () => {
-  const data = dataTest.multipleStudents;
+  const data = dataTest.multipleStudents(2);
   const newdata = fillData(data);
   expect(newdata.footer).toEqual('Los alumnos declaran haber realizado el presente trabajo de acuerdo a las normas de la Universidad Católica San Pablo');
 });
 
 it('When multiple person then fill separated names', () => {
-  const data = dataTest.multipleStudents;
+  const data = dataTest.multipleStudents(2);
   const newdata = fillData(data);
   expect(newdata.names).toEqual(data.names.join(String.raw` \\ `));
 });

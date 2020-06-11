@@ -1,7 +1,5 @@
 ##############################################LATEX##############################################
 FROM ubuntu:xenial
-MAINTAINER Benedikt Lang <mail@blang.io>
-#ENV DEBIAN_FRONTEND noninteractive
 
 ## Install full TexLive
 RUN apt-get update -q && apt-get install -qy \
@@ -33,8 +31,6 @@ RUN npm install
 #
 ## Bundle app source
 COPY . /app/user/caratulas-ucsp-api
-# For use ssh on docker
-ADD ./.profile.d /app/.profile.d
 # network
 EXPOSE 8080
 #

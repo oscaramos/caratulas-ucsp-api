@@ -22,14 +22,26 @@ describe('When x request a cover then generate a cover and response with a link 
 
   test('one male student then generate and response w/ a link', () => {
     return expectReturnLink(TestData.maleStudent);
-  });
+  }, 10000);
 
   test('one female student then generate and response w/ a link', () => {
     return expectReturnLink(TestData.femaleStudent);
   });
 
-  test('multiple students then generate and response w/ a link', () => {
-    return expectReturnLink(TestData.multipleStudents);
+  test('Two students then generate and response w/ a link', () => {
+    return expectReturnLink(TestData.multipleStudents(2));
+  });
+
+  test('Tree students then generate and response w/ a link', () => {
+    return expectReturnLink(TestData.multipleStudents(3));
+  });
+
+  test('Six students then generate and response w/ a link', () => {
+    return expectReturnLink(TestData.multipleStudents(6));
+  });
+
+  test('Eight students then generate and response w/ a link', () => {
+    return expectReturnLink(TestData.multipleStudents(8));
   });
 })
 

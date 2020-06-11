@@ -26,7 +26,7 @@ it('One female student', () => {
 
 it('Multiple students', () => {
   expect.assertions(1);
-  const data = fillData(dataTest.multipleStudents);
+  const data = fillData(dataTest.multipleStudents(2));
   return compileCover(data)
     .then(path => {
       console.log(path);
