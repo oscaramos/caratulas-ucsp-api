@@ -1,11 +1,9 @@
 const compileCover = require('./compile-cover')
 const dataTest = require('../../TestData')
-const fillData = require('../fill-data/fill-data')
 
 it('One male student', () => {
 	expect.assertions(1)
-	const data = fillData(dataTest.maleStudent)
-	return compileCover(data)
+	return compileCover(dataTest.maleStudent)
 		.then(path => {
 			console.log(path)
 			expect(path).toBeDefined()
@@ -15,8 +13,7 @@ it('One male student', () => {
 
 it('One female student', () => {
 	expect.assertions(1)
-	const data = fillData(dataTest.femaleStudent)
-	return compileCover(data)
+	return compileCover(dataTest.femaleStudent)
 		.then(path => {
 			console.log(path)
 			expect(path).toBeDefined()
@@ -26,8 +23,7 @@ it('One female student', () => {
 
 it('Multiple students', () => {
 	expect.assertions(1)
-	const data = fillData(dataTest.multipleStudents(2))
-	return compileCover(data)
+	return compileCover(dataTest.multipleStudents(2))
 		.then(path => {
 			console.log(path)
 			expect(path).toBeDefined()
