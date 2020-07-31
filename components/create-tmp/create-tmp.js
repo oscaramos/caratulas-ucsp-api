@@ -1,17 +1,17 @@
-const tmp = require('tmp-promise');
-const fs = require('fs');
+const tmp = require('tmp-promise')
+const fs = require('fs')
 
 const options = {
-  keep: true
+	keep: true
 }
 
 const createTmp = (content) => {
-  return tmp.file(options)
-    .then(o => {
-      fs.writeFileSync(o.path, content);
-      return o;
-    }
-  );
-};
+	return tmp.file(options)
+		.then(o => {
+			fs.writeFileSync(o.path, content)
+			return o
+		}
+		)
+}
 
-module.exports = createTmp;
+module.exports = createTmp
