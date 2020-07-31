@@ -1,7 +1,7 @@
 const latex = require('node-latex')
 const fs = require('fs')
 
-const { atUtils } = require('../rootUtils.utils')
+const { atUtils } = require('../../utils/utils')
 
 const options = {
 	inputs: atUtils()
