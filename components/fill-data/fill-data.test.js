@@ -26,4 +26,17 @@ describe('Fill names data', () => {
 	})
 })
 
+describe('Fill lines data', () => {
+	const expectLines = (data, names) => expect(fillData(data).lines).toEqual(names)
 
+	it('there is one person', () => {
+		expectLines(dataTest.maleStudent, '----------------------------------')
+		expectLines(dataTest.femaleStudent, '----------------------------------')
+	})
+
+	it('there are multiple persons', () => {
+		expectLines(dataTest.multipleStudents(2), '---------------------------------- ----------------------------------')
+		expectLines(dataTest.multipleStudents(3), '---------------------------------- ---------------------------------- ----------------------------------')
+		expectLines(dataTest.multipleStudents(4), '---------------------------------- ---------------------------------- ---------------------------------- ----------------------------------')
+	})
+})
