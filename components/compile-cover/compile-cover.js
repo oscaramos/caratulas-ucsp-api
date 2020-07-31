@@ -2,19 +2,19 @@ const { renderTemplateFile } = require('template-file')
 
 const compileLatex = require('../compile-latex/compile-latex')
 const getOutputPdfName = require('../get-output-pdf-name/get-output-pdf-name')
-
-const { atUtils } = require('../rootUtils.utils')
 const createTmp  = require('../create-tmp/create-tmp')
 
+const { atUtils } = require('../rootUtils.utils')
 
 const compileCover = async data => {
-	const rendered = await renderTemplateFile(atUtils('caratula.tex'), data)
-	const tmp = await createTmp(rendered)
+	const latexTemplate = await renderTemplateFile(atUtils('caratula.tex'), data)
 
-	const pdfPath = getOutputPdfName(data)
-	await compileLatex(tmp.path, pdfPath)
+	// Create an temporally file and with it compile the cover
+	const tmp = await createTmp(latexTemplate)
+	await compileLatex(tmp.path, getOutputPdfName(data))
 	tmp.cleanup()
-	return pdfPath
+
+	return getOutputPdfName(data)
 }
 
 module.exports = compileCover
