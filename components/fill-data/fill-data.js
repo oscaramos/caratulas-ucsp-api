@@ -1,6 +1,6 @@
 const lineTemplate = '----------------------------------'
 
-const mergeNames = names => names.join(String.raw` \\ `)
+const mergeNames = names => names.join(String.raw` \\ `) + String.raw` \\ `
 const repeatWithSpacesBetween = times => (lineTemplate + ' ').repeat(times).slice(0, -1)
 
 const fillData = (data) => {
