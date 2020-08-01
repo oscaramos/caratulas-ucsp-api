@@ -1,6 +1,7 @@
 const lineTemplate = '----------------------------------'
+const latexNewline = String.raw` \\ `
 
-const mergeNames = names => names.join(String.raw` \\ `) + String.raw` \\ `
+const mergeNames = names => names.join(latexNewline) + latexNewline
 const repeatWithSpacesBetween = times => (lineTemplate + ' ').repeat(times).slice(0, -1)
 
 const fillData = (data) => {

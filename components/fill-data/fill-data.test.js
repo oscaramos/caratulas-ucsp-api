@@ -20,9 +20,10 @@ describe('Fill footer data', () => {
 
 describe('Fill names data', () => {
 	const expectNames = (data, names) => expect(fillData(data).names).toEqual(names)
+	const latexNewline = String.raw` \\ `
 
 	it('they are multiple person then fill separated names', () => {
-		expectNames(dataTest.multipleStudents(2), dataTest.multipleStudents(2).names.join(String.raw` \\ `) + String.raw` \\ `)
+		expectNames(dataTest.multipleStudents(2), dataTest.multipleStudents(2).names.join(latexNewline) + latexNewline)
 	})
 })
 
