@@ -1,9 +1,9 @@
 const { basename } = require('path')
 
-const link = process.env.NODE_ENV.includes('development') ? 'http://localhost:4000/' : 'https://caratulas-ucsp-api.herokuapp.com/'
+const port = process.env.PORT || 4000
 
-const linkToCover = path => {
-	return link + basename(path)
+const linkToCover = (hostname, path) => {
+	return `${hostname}:${port}/${basename(path)}`
 }
 
 module.exports = linkToCover
