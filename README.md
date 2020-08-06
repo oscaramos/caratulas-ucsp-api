@@ -3,31 +3,37 @@ Es la parte back-end de la aplicación [Caratulas UCSP](https://github.com/oscar
 
 ## ¿Cómo funciona?
 El usuario hace un request con el siguiente formato:
-``` js
+``` json
 {
-  career: 'Computer Science',
-  course: 'Curso final de carrera',
-  work: 'Trabajo final de carrera',
-  gender: 'M',
-  names: ['Nombre1 Nombre2 Apellido1 Apellido2'],
-  semester: 'Semestre X',
-  year: '2020-1',
+  "career": "Computer Science",
+  "course": "Curso final de carrera",
+  "work": "Trabajo final de carrera",
+  "gender": "M",
+  "names": ["Nombre1 Nombre2 Apellido1 Apellido2"],
+  "semester": "Semestre X",
+  "year": "2020-1",
 }
 ```
 
 
-Y el sistema responde con:
+Y el sistema puede responder con:
 ``` js
 {
-  link: "http://localhost:4000/dy52b899.pdf"
+  "link": "http://54.193.19.36:4000/dy52b899.pdf"
 }
 ```
 Este link apunta hacia una caratula compilada con los datos ingresados por el usuario.
 
-## Compilación
-El sistema es compilado en formato latex con un compilador tex-live. 
-Sobre un contenedor docker conteniendo un sistema operativo ubuntu 16.04 LTS. 
-  
+El documento estara disponible 10 minutos antes de que se auto-destruya
 
-# Trabajos futuros
-En un futuro escribire una mejor documentación que describa como instalar y usar esta api de caratulas.
+La documentación completa de las consultas se encuentran [aqui](https://documenter.getpostman.com/view/10567086/T1LHGp73?version=latest)
+
+## Desarrollo
+Tener instalado [docker](https://www.docker.com/).
+
+1. Para la construccion del contenedor `docker build -t oscaramos/caratulas-ucsp-api .`
+2. Para la ejecucion del contenedor `docker run -it -p 4000:4000 oscaramos/caratulas-ucsp-api` 
+
+## Despliegue
+Este sistema esta desplegado sobre esta ip: http://54.193.19.36:4000/
+
