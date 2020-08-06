@@ -1,5 +1,5 @@
 # Caratulas UCSP API
-Es la parte back-end de la aplicación [Caratulas UCSP](https://github.com/oscaramos/caratulas-ucsp).
+Es la parte back-end de la aplicación [Caratulas UCSP](https://github.com/oscaramos/caratulas-ucsp)
 
 ## ¿Cómo funciona?
 El usuario hace un request con el siguiente formato:
@@ -15,14 +15,13 @@ El usuario hace un request con el siguiente formato:
 }
 ```
 
-
 Y el sistema puede responder con:
 ``` js
 {
   "link": "http://54.193.19.36:4000/dy52b899.pdf"
 }
 ```
-Este link apunta hacia una caratula compilada con los datos ingresados por el usuario.
+Este link apunta hacia una caratula compilada con los datos ingresados por el usuario
 
 El documento estara disponible 10 minutos antes de que se auto-destruya
 
@@ -35,5 +34,7 @@ Tener instalado [docker](https://www.docker.com/).
 2. Para la ejecucion del contenedor `docker run -it -p 4000:4000 oscaramos/caratulas-ucsp-api` 
 
 ## Despliegue
-Este sistema esta desplegado sobre esta ip: http://54.193.19.36:4000/
+Este sistema está desplegado sobre esta ip: http://54.193.19.36:4000/
+
+El contenedor está disponible en [docker hub](https://hub.docker.com/r/oscaramos/caratulas-ucsp-api)
 
