@@ -38,3 +38,5 @@ Este sistema está desplegado sobre esta ip: http://54.193.19.36:4000/
 
 El contenedor está disponible en [docker hub](https://hub.docker.com/r/oscaramos/caratulas-ucsp-api)
 
+Si necesita un sistema con https(Evitar el error Content-Mixed) puede usar este [projecto](https://github.com/oscaramos/caratulas-ucsp-api-proxy)
+
